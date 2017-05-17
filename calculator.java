@@ -1,9 +1,8 @@
 
 /**
- * Write a description of class calculator here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+
+ * @author Cong Do Nguyen
+
  */
 import javax.swing.*;
 import javax.swing.border.*;
@@ -11,13 +10,13 @@ import java.awt.*;
 import java.awt.event.*;
 public class calculator
 {
-    // instance variables - replace the example below with your own
+    // instance variables 
     private int x;
     private JFrame frame;
     private JTextField displayArea;
     private JLabel status;
     /**
-     * Constructor for objects of class calculator
+     * Constructor
      */
     public calculator()
     {
@@ -25,26 +24,23 @@ public class calculator
        frame.pack();
        frame.setVisible(true);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
+// Make Frame Method
     public void makeFrame(){
         frame = new JFrame("Calculator");
         JPanel contentPane = (JPanel)frame.getContentPane();
         makeMenus();
-        
+        //Layout
         contentPane.setLayout(new BorderLayout(24, 24));
         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
         
+        //Text field
         displayArea = new JTextField();
         contentPane.add(displayArea, BorderLayout.NORTH);
         
+        //Panel
         JPanel buttonPanel = new JPanel(new GridLayout(4,4));
         
+        //Number buttons
         JButton button0 = new JButton("0");
         JButton button1 = new JButton("1");
         JButton button2 = new JButton("2");
@@ -56,14 +52,15 @@ public class calculator
         JButton button8 = new JButton("8");
         JButton button9 = new JButton("9");
         
+        //Sign Buttons
         JButton add = new JButton("+");
         JButton substract = new JButton("-");
         JButton multiply = new JButton("*");
         JButton divide = new JButton("/");
-        
         JButton CE = new JButton("C/CE");
         JButton equal = new JButton("=");
         
+        //Add buttons
         buttonPanel.add(button1);
         buttonPanel.add(button2);
         buttonPanel.add(button3);
@@ -80,12 +77,7 @@ public class calculator
         buttonPanel.add(button0);
         buttonPanel.add(equal);
         buttonPanel.add(divide);
-        
-        
-        
         contentPane.add(buttonPanel, BorderLayout.CENTER);
-        frame.pack();
-        
     }
     
     public void makeMenus(){
